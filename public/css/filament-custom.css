@@ -1,0 +1,65 @@
+/* =====================================
+   FILAMENT CUSTOM LIGHT THEME
+   Place in: public/css/filament-custom.css
+===================================== */
+
+/* 1. تحويل الخلفيات والنصوص للوضع الفاتح */
+.fi-body, 
+.fi-layout, 
+.fi-main, 
+.fi-simple-layout, /* لصفحة تسجيل الدخول */
+.fi-main-ctn {
+    background-color: #f8fafc !important; /* رمادي فاتح جداً */
+    color: #0f172a !important;            /* نص كحلي غامق */
+    font-family: 'Tajawal', sans-serif !important;
+}
+
+/* 2. الشريط العلوي والقائمة الجانبية (خلفية بيضاء) */
+.fi-topbar, 
+.fi-sidebar {
+    background-color: #ffffff !important;
+    border-color: rgba(2,6,23,0.08) !important;
+}
+
+/* 3. تعديل السايد بار (العنصر النشط) */
+.fi-sidebar-item-active, 
+.fi-sidebar-item.fi-active > a {
+    background-color: rgba(35, 109, 111, 0.1) !important; /* لون آمر 7 فاتح جداً */
+    border-right: 3px solid #1FA7A2 !important;
+    color: #1FA7A2 !important;
+    font-weight: 700 !important;
+}
+
+/* لون نصوص القائمة غير النشطة */
+.fi-sidebar-item-label {
+    color: #334155 !important;
+}
+
+/* 4. الأزرار في لوحة التحكم */
+.fi-btn-primary {
+    background-color: #1FA7A2 !important; /* لون آمر 7 */
+    border-color: #1FA7A2 !important;
+    color: #ffffff !important; /* نص أبيض ليكون واضحاً */
+}
+
+.fi-btn-primary:hover {
+    background-color: #1a5254 !important;
+}
+
+/* 5. الكروت والنماذج (لضمان عدم ظهورها بالأسود) */
+.fi-card, 
+.fi-section, 
+.fi-fo-field-wrp {
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05) !important;
+}
+
+/* 6. حقول الإدخال */
+.fi-input, 
+.fi-select-input, 
+.fi-textarea {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+}

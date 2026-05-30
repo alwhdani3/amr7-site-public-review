@@ -1,0 +1,95 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    ######################################################################
+    # Canonical host: www -> non-www
+    ######################################################################
+    RewriteCond %{HTTP_HOST} ^www\.amr-7\.sa$ [NC]
+    RewriteRule ^(.*)$ https://amr-7.sa/$1 [L,R=301]
+
+    ######################################################################
+    # Canonical scheme: force HTTPS
+    ######################################################################
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^(.*)$ https://amr-7.sa/$1 [L,R=301]
+
+    ######################################################################
+    # Legacy WordPress / old system URLs -> 410 Gone
+    ######################################################################
+    RewriteRule ^wp-admin/?$ - [R=410,L]
+    RewriteRule ^wp-login\.php$ - [R=410,L]
+    RewriteRule ^wp-content(/.*)?$ - [R=410,L]
+    RewriteRule ^wp-includes(/.*)?$ - [R=410,L]
+    RewriteRule ^xmlrpc\.php$ - [R=410,L]
+    RewriteRule ^wp-json/?$ - [R=410,L]
+    RewriteRule ^wp-json(/.*)?$ - [R=410,L]
+
+    ######################################################################
+    # Old feeds / tags / categories / archives -> 410 Gone
+    ######################################################################
+    RewriteRule ^feed/?$ - [R=410,L]
+    RewriteRule ^comments/feed/?$ - [R=410,L]
+    RewriteRule ^(.+)/feed/?$ - [R=410,L]
+    RewriteRule ^tag(/.*)?$ - [R=410,L]
+    RewriteRule ^category(/.*)?$ - [R=410,L]
+    RewriteRule ^author(/.*)?$ - [R=410,L]
+    RewriteRule ^page(/.*)?$ - [R=410,L]
+
+    ######################################################################
+    # Legacy WooCommerce / shop junk -> 410 Gone
+    ######################################################################
+    RewriteRule ^product-category(/.*)?$ - [R=410,L]
+    RewriteRule ^product-tag(/.*)?$ - [R=410,L]
+    RewriteRule ^product(/.*)?$ - [R=410,L]
+    RewriteRule ^shop(/.*)?$ - [R=410,L]
+    RewriteRule ^cart/?$ - [R=410,L]
+    RewriteRule ^checkout/?$ - [R=410,L]
+    RewriteRule ^my-account(/.*)?$ - [R=410,L]
+
+    ######################################################################
+    # Other old junk -> 410 Gone
+    ######################################################################
+    RewriteRule ^portfolio(/.*)?$ - [R=410,L]
+    RewriteRule ^project-cat(/.*)?$ - [R=410,L]
+    RewriteRule ^elementor-.*$ - [R=410,L]
+
+    ######################################################################
+    # Canonical trailing slash removal for non-directories
+    ######################################################################
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    ######################################################################
+    # Old aliases -> clean current URLs
+    ######################################################################
+    RewriteRule ^about-us/?$ /about [L,R=301]
+    RewriteRule ^company-formation-saudi-arabia/?$ /company-formation/riyadh [L,R=301]
+    RewriteRule ^contact/?$ /contact-us [L,R=301]
+    RewriteRule ^terms/?$ /using-policy [L,R=301]
+
+    ######################################################################
+    # Pass Authorization / XSRF headers to PHP
+    ######################################################################
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    RewriteCond %{HTTP:X-XSRF-Token} .
+    RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
+
+    ######################################################################
+    # Block sensitive / non-public app areas
+    ######################################################################
+    RewriteRule ^nova(/.*)?$ - [F,L]
+
+    ######################################################################
+    # Front controller
+    ######################################################################
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>

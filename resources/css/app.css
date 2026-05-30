@@ -1,0 +1,163 @@
+/* =========================================
+   AMR-7 APP (Tailwind v4 Clean Setup)
+   ========================================= */
+
+/* 1. Core Imports */
+@import "tailwindcss";
+@import "../../vendor/livewire/flux/dist/flux.css";
+
+/* 2. Vendor Imports */
+@import "animate.css/animate.min.css";
+
+/* 3. Configuration (Sources & Plugins) */
+@source "../views";
+@source "../js";
+@source "../../app/Livewire";
+@source "../../app/View";
+@source "../../vendor/livewire/flux";
+
+@plugin "@tailwindcss/forms";
+
+/* 4. Theme Configuration */
+@theme {
+  /* Fonts */
+  --font-sans: "Tajawal", "Figtree", sans-serif;
+  --font-tajawal: "Tajawal", "Figtree", sans-serif;
+  --font-en: "Montserrat", "Inter", "Tajawal", sans-serif;
+
+  /* =========================================
+     Colors — AMR7 Business Identity (canonical)
+     Approved palette:
+       Navy        #0A2540
+       Teal        #1FA7A2
+       Light Teal  #8EDCEF
+       Light Gray  #E8ECEF
+     ========================================= */
+
+  /* Brand tokens (preferred, semantic names) */
+  --color-brand-navy: #0A2540;
+  --color-brand-teal: #1FA7A2;
+  --color-brand-light-teal: #8EDCEF;
+  --color-brand-light-gray: #E8ECEF;
+
+  /* Legacy AMR aliases (kept for existing utilities) */
+  --color-amr-navy: #0A2540;
+  --color-amr-navy-700: #102E4D;
+  --color-amr-navy-600: #1B3A5C;
+  --color-amr-teal: #1FA7A2;
+  --color-amr-teal-700: #167F7B;
+  --color-amr-teal-400: #44BDB8;
+  --color-amr-teal-50: #EEF8F7;
+  --color-amr-sky: #8EDCEF;
+  --color-amr-mist: #E8ECEF;
+  --color-amr-dark: #167F7B;
+  --color-amr-bg: #f8fafc;
+  --color-amr-surface: #ffffff;
+  --shadow-brand: 0 14px 38px rgba(31, 167, 162, 0.18);
+
+  /* Primary ramp (kept in sync with resources/css/filament/theme.css) */
+  --color-primary-50: #EEF8F7;
+  --color-primary-100: #D6EFEE;
+  --color-primary-200: #ABDFDD;
+  --color-primary-300: #8EDCEF;
+  --color-primary-400: #44BDB8;
+  --color-primary-500: #1FA7A2;
+  --color-primary-600: #1FA7A2; /* Main Brand Color */
+  --color-primary-700: #167F7B;
+  --color-primary-800: #115e59;
+  --color-primary-900: #0A2540;
+  --color-primary-950: #07182B;
+
+  /* =========================================
+     Modern UI Animations (Blob Effects)
+     ========================================= */
+  --animate-blob: blob 7s infinite;
+
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+}
+
+/* 5. Custom Variants */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 6. Base Layer (Global Styles) */
+/*
+ * Tajawal is loaded via Google Fonts in every layout (see partials/head.blade.php
+ * and layouts/*.blade.php). Local @font-face rules pointing at /fonts/amr7/*.ttf
+ * were removed because Vite cannot resolve project-root absolute URLs from a
+ * processed CSS file and emitted "didn't resolve at build time" warnings, even
+ * though the files exist in public/fonts/amr7/. The remaining ttf files in
+ * public/fonts/amr7/ are kept for any direct/legacy reference.
+ */
+@layer base {
+  :root {
+    --amr7-navy: #0A2540;
+    --amr7-teal: #1FA7A2;
+    --amr7-light-teal: #8EDCEF;
+    --amr7-light-gray: #E8ECEF;
+    font-synthesis: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* ✅ استخدم تاجوال كنص افتراضي بدون تكسير Font Awesome */
+  body {
+    font-family: var(--font-tajawal);
+    @apply bg-slate-50 text-slate-900 antialiased;
+  }
+
+  /* Montserrat for English locale pages (approved English brand font) */
+  html[lang="en"] body,
+  html[dir="ltr"] body {
+    font-family: var(--font-en);
+  }
+
+  [x-cloak] {
+    display: none !important;
+  }
+
+  /* ✅ استثناء Font Awesome (حل اختفاء الأيقونات) */
+  .fa, .fas, .far, .fal, .fat, .fab,
+  .fa-solid, .fa-regular, .fa-light, .fa-thin, .fa-duotone, .fa-brands {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+    font-style: normal;
+  }
+}
+
+/* 7. Utilities Layer (Custom Classes) */
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  .text-gradient-teal {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[--color-amr-teal] to-[--color-amr-dark];
+  }
+
+  .amr-container { @apply mx-auto max-w-7xl px-4; }
+  .row { @apply flex flex-wrap -mx-3; }
+  .col-md-6 { @apply w-full md:w-6/12 px-3; }
+  .col-lg-4 { @apply w-full lg:w-4/12 px-3; }
+
+  .btn-amr {
+    @apply inline-flex items-center justify-center rounded-xl px-6 py-3 font-bold transition-all duration-300 hover:scale-105;
+  }
+}
+
+/* 8. Custom Animation Delays */
+@utility animation-delay-2000 {
+  animation-delay: 2s;
+}

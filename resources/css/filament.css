@@ -1,0 +1,173 @@
+/* 1. استيراد خط تجوال لضمان ظهوره في لوحة التحكم */
+
+/* =====================================
+   FILAMENT LIGHT THEME - FINAL (Amr 7 Edition)
+   ===================================== */
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
+
+/* 2. Global Reset & Layout */
+html,
+body,
+.fi-layout,
+.fi-main-ctn,
+.fi-simple-layout, /* يشمل صفحة تسجيل الدخول */
+.fi-body {
+    background-color: #f8fafc !important; /* slate-50 */
+    color: #0f172a !important;            /* slate-900 */
+    font-family: 'Tajawal', sans-serif !important;
+}
+
+/* 3. Topbar (شريط التنقل العلوي) */
+.fi-topbar,
+.fi-topbar nav {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid rgba(2,6,23,0.08) !important;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05) !important;
+}
+
+/* 4. Sidebar (القائمة الجانبية) */
+.fi-sidebar,
+.fi-main-sidebar {
+    background-color: #ffffff !important;
+    border-inline-end: 1px solid rgba(2,6,23,0.08) !important; /* يدعم RTL/LTR */
+}
+
+.fi-sidebar-header {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid rgba(2,6,23,0.08) !important;
+}
+
+/* Sidebar Item Active */
+.fi-sidebar-item-active,
+.fi-sidebar-item.fi-active > a {
+    background-color: rgba(35, 109, 111, 0.08) !important;
+    color: #1FA7A2 !important;
+    border-inline-start: 4px solid #1FA7A2 !important; /* شريط جانبي نشط */
+    font-weight: 700 !important;
+}
+
+.fi-sidebar-item-label {
+    color: #334155 !important;
+    font-weight: 600;
+}
+
+/* Hover Effect for Sidebar */
+.fi-sidebar-item > a:hover {
+    background-color: #f1f5f9 !important;
+}
+
+/* 5. Cards, Widgets & Sections */
+.fi-section,
+.fi-card,
+.fi-wi-widget,
+.fi-fo-field-wrp {
+    background-color: #ffffff !important;
+    border: 1px solid rgba(2,6,23,0.08) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 20px -2px rgba(0,0,0,0.05) !important;
+}
+
+/* 6. Inputs (حقول الإدخال) */
+.fi-input,
+.fi-select-input,
+.fi-textarea,
+.fi-input-wrp {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 12px !important;
+}
+
+.fi-input::placeholder,
+.fi-textarea::placeholder {
+    color: #94a3b8 !important;
+}
+
+.fi-input:focus,
+.fi-select-input:focus,
+.fi-textarea:focus,
+.fi-input-wrp:focus-within {
+    border-color: #1FA7A2 !important;
+    box-shadow: 0 0 0 3px rgba(35, 109, 111, 0.15) !important;
+    outline: none !important;
+}
+
+/* 7. Buttons (الأزرار) */
+.fi-btn-primary {
+    background: linear-gradient(135deg, #1FA7A2 0%, #167F7B 100%) !important;
+    color: #ffffff !important;
+    border-radius: 12px !important;
+    border: none !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 12px rgba(35, 109, 111, 0.2) !important;
+    transition: all 0.3s ease !important;
+}
+
+.fi-btn-primary:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(35, 109, 111, 0.3) !important;
+}
+
+/* Secondary Buttons */
+.fi-btn-secondary,
+.fi-btn-gray,
+.fi-btn-white {
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #475569 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03) !important;
+}
+
+.fi-btn-secondary:hover {
+    background-color: #f8fafc !important;
+    border-color: #cbd5e1 !important;
+}
+
+/* 8. Tables (الجداول) */
+.fi-ta-table {
+    background-color: transparent !important;
+}
+
+.fi-ta-header-cell {
+    background-color: #f8fafc !important;
+    color: #475569 !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+.fi-ta-row {
+    border-bottom: 1px solid #f1f5f9 !important;
+    background-color: #ffffff !important;
+    transition: background-color 0.2s;
+}
+
+.fi-ta-row:hover {
+    background-color: #f8fafc !important;
+}
+
+/* 9. Links & Badges */
+a {
+    color: #1FA7A2;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #167F7B;
+}
+
+.fi-badge {
+    border: 1px solid transparent !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+}
+
+/* إصلاحات صغيرة */
+.fi-modal-window {
+    border-radius: 20px !important;
+    overflow: hidden;
+}

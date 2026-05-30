@@ -1,0 +1,17 @@
+# Laravel / Node ignored for public review repo
+.env
+.env.*
+/vendor/
+/node_modules/
+/storage/
+/bootstrap/cache/
+/public/storage/
+/public/build/
+/public/vendor/
+/coverage/
+/dist/
+/build/
+*.log
+*.backup
+.DS_Store
+__MACOSX/

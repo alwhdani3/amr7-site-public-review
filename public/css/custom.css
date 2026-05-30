@@ -1,0 +1,215 @@
+/* =========================================
+   CUSTOM CSS (LIGHT THEME - FINAL)
+   File: public/css/custom.css
+========================================= */
+
+:root {
+    --primary-color: #1FA7A2; /* لون آمر 7 الرسمي (زيتي/تركواز غامق) */
+    --secondary-color: #1d5557;
+    --text-color: #1f2933;    /* لون النص الأساسي (داكن) */
+    --bg-light: #f9fafb;      /* خلفية فاتحة جداً */
+    --border-color: #e2e8f0;
+}
+
+/* إعدادات الجسم الأساسية */
+body {
+    font-family: 'Tajawal', sans-serif;
+    color: var(--text-color);
+    background-color: #ffffff;
+    direction: rtl;
+    text-align: right;
+}
+
+/* === تصميم الكروت (Services) === */
+.service-card {
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    background: #ffffff;
+    padding: 25px;
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(35, 109, 111, 0.1);
+    border-color: var(--primary-color);
+}
+
+.service-icon-box {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(35, 109, 111, 0.08);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-size: 24px;
+}
+
+.service-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+/* === الأزرار (Buttons) === */
+.btn-amr {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-radius: 50px;
+    padding: 10px 28px;
+    font-weight: 600;
+    transition: 0.3s;
+    border: 2px solid var(--primary-color);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-amr:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+/* === الهيدر (Navbar Shadow) === */
+.navbar-amr {
+    box-shadow: 0 2px 15px rgba(0,0,0,0.04);
+    background: #ffffff;
+    padding: 15px 0;
+}
+
+/* === إصلاح القائمة المنسدلة (Hover) === */
+@media (min-width: 992px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+        animation: fadeIn 0.3s ease-in-out;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === تحسينات الروابط === */
+.hover-link {
+    transition: 0.3s;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.hover-link:hover {
+    color: var(--primary-color) !important;
+    padding-right: 5px;
+}
+
+/* =================================================================
+   SECTION 2: FORCED LIGHT MODE OVERRIDES
+   هذا الجزء مهم جداً لإصلاح العناصر الداكنة في كود HTML القديم
+================================================================= */
+
+/* 1. إصلاح الشريط العلوي (Top Bar) */
+.top-bar-amr {
+    background-color: var(--bg-light) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    color: var(--text-color) !important;
+}
+.top-link-item, .top-link-item span { color: #64748b !important; } /* رمادي */
+.top-link-item:hover, .top-link-item:hover span { color: var(--primary-color) !important; }
+.border-white-05 { border-color: var(--border-color) !important; }
+
+/* 2. إصلاح النافبار الرئيسي */
+.navbar-amr-master {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05) !important;
+}
+.amr-nav-link { color: var(--text-color) !important; }
+.amr-nav-link:hover, .amr-nav-link.active {
+    color: var(--primary-color) !important;
+    background: rgba(35, 109, 111, 0.05) !important;
+    border-radius: 8px;
+}
+/* زر القائمة في الجوال */
+.navbar-toggler i { color: var(--text-color) !important; }
+
+/* 3. إصلاح الشعار (إلغاء الفلتر الأبيض) */
+.logo-glow, .navbar-brand img, .footer-logo img { filter: none !important; }
+
+/* 4. إصلاح القوائم المنسدلة */
+.dropdown-menu-amr {
+    background-color: #ffffff !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+}
+.dropdown-item .text-white, .dropdown-item .text-white-50 { color: var(--text-color) !important; }
+.dropdown-item:hover { background-color: var(--bg-light) !important; }
+.icon-mini-square { background: rgba(35, 109, 111, 0.1) !important; color: var(--primary-color) !important; }
+
+/* 5. إصلاح الفوتر (Footer) */
+.footer-lux {
+    background: var(--bg-light) !important;
+    border-top: 1px solid var(--border-color) !important;
+    color: var(--text-color) !important;
+}
+.footer-grid-overlay { opacity: 0.03 !important; background-image: radial-gradient(#000 1px, transparent 1px) !important; }
+.footer-title { color: var(--primary-color) !important; border-bottom-color: var(--primary-color) !important; }
+.footer-title::after { background: var(--primary-color) !important; }
+.footer-link, .footer-bio, .copyright-text, .footer-bottom .text-white-50, .text-white-50 {
+    color: #64748b !important;
+}
+.footer-link:hover { color: var(--primary-color) !important; }
+
+/* حقل الاشتراك */
+.subscribe-glass-lux { background: #ffffff !important; border: 1px solid #cbd5e1 !important; }
+.form-control-glass { color: var(--text-color) !important; }
+.form-control-glass::placeholder { color: #94a3b8 !important; }
+
+/* بطاقات التواصل */
+.contact-card-mini {
+    background: #ffffff !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-color) !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+.contact-icon { background: rgba(35, 109, 111, 0.1) !important; color: var(--primary-color) !important; }
+
+/* أيقونات السوشيال */
+.social-circle { background: #ffffff !important; border: 1px solid #cbd5e1 !important; color: #64748b !important; }
+.social-circle:hover { background: var(--primary-color) !important; color: #ffffff !important; border-color: var(--primary-color) !important; }
+
+/* ساعات العمل */
+.work-hours { background: #ffffff !important; border: 1px solid var(--border-color) !important; }
+
+/* 6. إصلاح نافذة الدخول (Auth Modal) */
+.auth-glass {
+    background: #ffffff !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.1) !important;
+}
+.auth-input {
+    background: var(--bg-light) !important;
+    border: 1px solid #cbd5e1 !important;
+    color: var(--text-color) !important;
+}
+.auth-input:focus { background: #ffffff !important; border-color: var(--primary-color) !important; }
+.auth-icon { color: #94a3b8 !important; }
+.auth-tab { color: #64748b !important; }
+.auth-tab.active { background: rgba(35, 109, 111, 0.1) !important; color: var(--primary-color) !important; }
+.bg-white-10 { background: var(--bg-light) !important; }
+
+/* 7. إجبار النصوص البيضاء لتصبح سوداء (Kill Switch) */
+.text-white { color: var(--text-color) !important; }
+/* استثناء العناصر التي يجب أن تبقى بيضاء (مثل الأزرار الملونة) */
+.btn-amr-premium-glow .text-white, 
+.btn-etmaam-primary .text-white, 
+.badge .text-white,
+.btn .text-white { 
+    color: #ffffff !important; 
+}

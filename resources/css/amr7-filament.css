@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
+
+/* =====================================
+   FORCE LIGHT – ROOT & LAYOUT
+===================================== */
+
+html,
+body,
+.fi,
+.fi-body,
+.fi-layout,
+.fi-main,
+.fi-main-ctn {
+    background-color: #f8fafc !important;   /* slate-50 */
+    color: #0f172a !important;              /* slate-900 */
+    font-family: "Tajawal", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif !important;
+}
+
+/* =====================================
+   TOPBAR
+===================================== */
+
+.fi-topbar,
+.fi-topbar nav {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid rgba(2,6,23,0.08) !important;
+    box-shadow: 0 6px 18px rgba(2,6,23,.06) !important;
+}
+
+/* =====================================
+   SIDEBAR
+===================================== */
+
+.fi-sidebar,
+.fi-main-sidebar {
+    background-color: #ffffff !important;
+    border-inline-end: 1px solid rgba(2,6,23,0.08) !important; /* بدل left عشان RTL/LTR */
+}
+
+.fi-sidebar-header {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid rgba(2,6,23,0.08) !important;
+}
+
+.fi-sidebar-item-button {
+    border-radius: 10px;
+}
+
+/* Active item */
+.fi-sidebar-item-active,
+.fi-sidebar-item.fi-active > a {
+    background-color: rgba(68,189,184,0.18) !important;
+    border-inline-start: 3px solid #1FA7A2 !important; /* بدل right عشان RTL/LTR */
+}
+
+/* Labels */
+.fi-sidebar-item-label {
+    color: #0f172a !important;
+    font-weight: 600;
+}
+
+/* Hover (لطيف) */
+.fi-sidebar-item > a:hover,
+.fi-sidebar-item-button:hover {
+    background-color: rgba(2,6,23,0.04) !important;
+}
+
+/* =====================================
+   CARDS / SECTIONS / FORMS
+===================================== */
+
+.fi-section,
+.fi-card,
+.fi-fo-field-wrp,
+.fi-wi-widget {
+    background-color: rgba(255,255,255,0.92) !important;
+    border: 1px solid rgba(2,6,23,0.10) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 18px 50px rgba(2,6,23,.08) !important;
+}
+
+/* =====================================
+   INPUTS
+===================================== */
+
+.fi-input,
+.fi-select-input,
+.fi-textarea,
+.fi-input-wrp {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border: 1px solid rgba(2,6,23,0.14) !important;
+    border-radius: 10px;
+}
+
+.fi-input:focus,
+.fi-select-input:focus,
+.fi-textarea:focus,
+.fi-input-wrp:focus-within {
+    border-color: rgba(35,109,111,0.55) !important;
+    box-shadow: 0 0 0 6px rgba(68,189,184,0.22) !important;
+}
+
+/* Placeholder */
+.fi-input::placeholder,
+.fi-textarea::placeholder {
+    color: rgba(15,23,42,0.45) !important;
+}
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+.fi-btn-primary {
+    background: linear-gradient(135deg, #1FA7A2 0%, #44BDB8 100%) !important;
+    color: #06202a !important;
+    border: none !important;
+    border-radius: 10px;
+    font-weight: 800;
+}
+
+.fi-btn-primary:hover {
+    filter: brightness(0.98);
+    transform: translateY(-1px);
+}
+
+.fi-btn {
+    border-radius: 10px;
+}
+
+/* Secondary/outline buttons (لو موجودة) */
+.fi-btn-secondary,
+.fi-btn-outline,
+.fi-btn-gray {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border: 1px solid rgba(2,6,23,0.14) !important;
+}
+
+.fi-btn-secondary:hover,
+.fi-btn-outline:hover,
+.fi-btn-gray:hover {
+    background-color: rgba(2,6,23,0.03) !important;
+}
+
+/* =====================================
+   TABLES
+===================================== */
+
+.fi-ta-table {
+    background-color: transparent !important;
+}
+
+.fi-ta-row {
+    border-bottom: 1px solid rgba(2,6,23,0.08) !important;
+}
+
+.fi-ta-row:hover {
+    background-color: rgba(68,189,184,0.10) !important;
+}
+
+/* Table header */
+.fi-ta-header,
+.fi-ta-header-cell,
+.fi-ta-table thead {
+    background-color: rgba(255,255,255,0.92) !important;
+    color: rgba(15,23,42,0.75) !important;
+}
+
+/* =====================================
+   LINKS / BADGES
+===================================== */
+
+a,
+.fi-link {
+    color: #1FA7A2 !important;
+}
+
+a:hover,
+.fi-link:hover {
+    color: #167F7B !important;
+}
+
+.fi-badge {
+    border: 1px solid rgba(2,6,23,0.10) !important;
+    background: rgba(255,255,255,0.70) !important;
+    color: #0f172a !important;
+}

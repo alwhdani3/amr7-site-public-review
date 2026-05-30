@@ -1,0 +1,128 @@
+@layer components {
+    /* ملف تنسيقات نماذج القوائم المالية (FS Forms) */
+
+    .amr-fs-form {
+        /* متغيرات الألوان المحلية */
+        --amr-bg: #f8fafc;
+        --amr-border: rgba(2,6,23,.12);
+        --amr-teal: #1FA7A2;
+        --amr-text: #0f172a;
+        --amr-muted: #475569;
+        --amr-error: #dc2626;
+    }
+
+    /* بطاقة النموذج (Form Card) */
+    .amr-form-card {
+        @apply rounded-[32px] border border-slate-200/60 p-10 relative overflow-hidden backdrop-blur-xl shadow-2xl;
+        background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,252,0.98));
+    }
+
+    /* عناوين الخطوات */
+    .form-step-title {
+        @apply text-[#1FA7A2] font-extrabold text-lg mb-6 pb-2 border-b-2 border-teal-900/10;
+    }
+
+    /* التسميات (Labels) */
+    .amr-form-card label,
+    .amr-input-group label {
+        @apply text-slate-900 text-sm font-bold mb-2 block;
+    }
+
+    .amr-input-group label i {
+        @apply text-[#1FA7A2] ml-1.5;
+    }
+
+    /* حقول الإدخال (Inputs, Selects, Textareas) */
+    .amr-form-card input:not([type=radio]):not([type=checkbox]):not([type=file]),
+    .amr-form-card select,
+    .amr-form-card textarea,
+    .amr-input {
+        @apply w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-slate-900 outline-none transition-all duration-300 text-sm shadow-sm;
+    }
+
+    .amr-form-card input::placeholder,
+    .amr-form-card textarea::placeholder {
+        @apply text-slate-400;
+    }
+
+    .amr-form-card input:focus,
+    .amr-form-card select:focus,
+    .amr-form-card textarea:focus {
+        @apply bg-white border-[#1FA7A2] ring-4 ring-[#1FA7A2]/10;
+    }
+
+    .amr-form-card textarea {
+        @apply min-h-[140px] resize-none;
+    }
+
+    /* تخصيص Select (سهم القائمة) */
+    .amr-form-card select {
+        @apply appearance-none bg-no-repeat;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%231FA7A2' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+        background-position: left 1rem center;
+        background-size: 16px 12px;
+        padding-left: 3rem;
+    }
+
+    /* أزرار الاختيار (Radio Buttons style) */
+    .btn-outline-selector {
+        @apply border border-slate-200 text-slate-600 p-4 rounded-2xl bg-white transition-all duration-200 cursor-pointer text-center font-bold block hover:border-slate-300 hover:bg-slate-50;
+    }
+
+    .btn-check:checked + .btn-outline-selector {
+        @apply bg-[#1FA7A2]/10 border-[#1FA7A2] text-[#1FA7A2] shadow-md transform -translate-y-0.5;
+    }
+
+    /* رفع الملفات (File Upload) */
+    .amr-file-upload {
+        @apply border-2 border-dashed border-slate-300 rounded-2xl p-8 text-center relative transition-all duration-300 bg-slate-50 text-slate-500 cursor-pointer;
+    }
+
+    .amr-file-upload:hover {
+        @apply border-[#1FA7A2] bg-[#f0fdfa] text-[#1FA7A2];
+    }
+
+    .amr-file-upload input[type=file] {
+        @apply absolute inset-0 opacity-0 cursor-pointer w-full h-full;
+    }
+
+    .amr-file-meta {
+        @apply text-slate-400 text-xs mt-2 font-medium;
+    }
+
+    /* أزرار الإرسال (Submit Buttons) */
+    .btn-amr-premium,
+    .amr-submit-btn {
+        @apply w-full bg-gradient-to-br from-[#1FA7A2] to-[#167F7B] text-white border-none rounded-full font-extrabold py-4 px-10 cursor-pointer transition-all duration-300 text-lg mt-4 shadow-xl hover:-translate-y-1 hover:shadow-2xl flex items-center justify-center gap-2;
+    }
+
+    /* الشروط والأحكام */
+    .amr-terms {
+        @apply flex gap-2 items-center text-slate-500 text-sm mt-4 font-medium;
+    }
+
+    .amr-terms a {
+        @apply text-[#1FA7A2] underline font-bold hover:text-[#167F7B];
+    }
+
+    /* رسائل الخطأ */
+    .amr-error, .amr-error-msg {
+        @apply text-xs text-red-600 mt-1.5 font-bold block animate-pulse;
+    }
+
+    /* رسالة نجاح واتساب */
+    .whatsapp-success {
+        @apply bg-emerald-50 border border-emerald-500 text-emerald-700 p-4 rounded-2xl text-center mt-5 font-bold shadow-sm;
+    }
+
+    /* طبقة التحميل (Loading Overlay) */
+    .amr-loading {
+        @apply absolute inset-0 bg-white/80 flex items-center justify-center z-20 backdrop-blur-sm rounded-[32px];
+    }
+
+    /* نصوص إنجليزية (LTR) */
+    .ltr-text { 
+        @apply text-left; 
+        direction: ltr; 
+    }
+}

@@ -1,0 +1,79 @@
+@layer components {
+    /* ملف تنسيق نموذج طلب الخدمة (Service Request) */
+
+    /* بطاقة النموذج (Form Card) */
+    .amr-form-card-light {
+        @apply bg-white rounded-3xl shadow-[0_10px_40px_-5px_rgba(0,0,0,0.08)] border border-slate-100;
+    }
+
+    /* طبقة التحميل (Loading Overlay) */
+    .amr-loading-overlay {
+        @apply absolute inset-0 bg-white/85 z-10 flex items-center justify-center rounded-3xl backdrop-blur-sm;
+    }
+
+    /* حقول الإدخال والقوائم (Inputs & Selects) */
+    .amr-form-card-light .form-control,
+    .amr-form-card-light .form-select {
+        @apply text-slate-800 text-sm;
+    }
+
+    .amr-form-card-light .form-control:focus,
+    .amr-form-card-light .form-select:focus {
+        @apply border-[#1FA7A2] ring-4 ring-[#1FA7A2]/10 bg-white shadow-none outline-none;
+    }
+
+    .amr-form-card-light .form-control::placeholder {
+        @apply text-slate-400;
+    }
+
+    /* مجموعات الإدخال (Input Groups - للأيقونات) */
+    .amr-form-card-light .input-group-text {
+        @apply border-slate-300 bg-slate-50 text-slate-500;
+    }
+
+    .amr-form-card-light .input-group:focus-within .input-group-text {
+        /* تم التصحيح */
+        @apply !border-[#1FA7A2] !bg-[#1FA7A2]/5 !text-[#1FA7A2];
+    }
+
+    /* حدود متقطعة (لرفع الملفات) */
+    .dashed-border {
+        /* تم التصحيح */
+        @apply !border-2 !border-dashed !border-slate-300 transition-all duration-300 ease-in-out;
+    }
+
+    .dashed-border:hover {
+        /* تم التصحيح */
+        @apply !border-[#1FA7A2] !bg-[#f0fdfa] !-translate-y-0.5;
+    }
+
+    /* زر بريميوم متوهج (Premium Glow Button) */
+    .btn-amr-premium-glow {
+        @apply bg-gradient-to-br from-[#1FA7A2] to-[#167F7B] text-white border-none transition-all duration-300;
+    }
+
+    .btn-amr-premium-glow:hover {
+        /* تم التصحيح */
+        @apply -translate-y-0.5 text-white !shadow-[0_8px_20px_rgba(35,109,111,0.25)];
+    }
+
+    /* نصوص مساعدة (Utilities) */
+    .text-teal {
+        /* تم التصحيح */
+        @apply !text-[#1FA7A2];
+    }
+
+    .cursor-pointer {
+        @apply cursor-pointer;
+    }
+
+    .ltr-text {
+        @apply text-left;
+        direction: ltr;
+    }
+
+    .hover-bg-white:hover {
+        /* تم التصحيح */
+        @apply !bg-white;
+    }
+}

@@ -1,0 +1,211 @@
+/* ===============================
+   AMR Service Request – Light UI
+   File: public/css/service-request.css
+================================ */
+
+:root{
+    /* Light Theme Variables */
+    --amr-bg: #f8fafc;           /* خلفية فاتحة */
+    --amr-card: #ffffff;         /* خلفية البطاقة بيضاء */
+    --amr-border: #e2e8f0;       /* حدود رمادية فاتحة */
+    --amr-teal: #1FA7A2;         /* لون الهوية (زيتي) */
+    --amr-teal-light: #44BDB8;   /* لون تركواز فاتح */
+    --amr-text: #0f172a;         /* نص كحلي غامق */
+    --amr-muted: #64748b;        /* نص رمادي */
+    --amr-error: #ef4444;        /* لون الخطأ */
+}
+
+/* --- Container Card --- */
+.amr-form-card {
+    background: #ffffff;
+    border-radius: 32px;
+    border: 1px solid var(--amr-border);
+    box-shadow: 0 20px 40px -5px rgba(0,0,0,0.08); /* ظل ناعم */
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- Titles & Headings --- */
+.form-step-title {
+    color: var(--amr-teal);
+    font-weight: 800;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid rgba(35, 109, 111, 0.1);
+    padding-bottom: 10px;
+}
+
+/* --- Labels --- */
+.amr-input-group label {
+    color: var(--amr-text);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    display: block;
+    font-weight: 700;
+}
+.amr-input-group label i {
+    color: var(--amr-teal);
+    margin-inline-end: 5px;
+}
+
+/* --- Inputs, Selects, Textareas --- */
+.amr-input,
+.amr-input-group input,
+.amr-input-group select,
+.amr-input-group textarea {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #cbd5e1; /* حدود واضحة */
+    border-radius: 12px;
+    padding: 14px 18px;
+    color: var(--amr-text);
+    outline: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+/* Placeholder Color */
+.amr-input::placeholder,
+.amr-input-group input::placeholder,
+.amr-input-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+/* Focus State */
+.amr-input:focus,
+.amr-input-group input:focus,
+.amr-input-group select:focus,
+.amr-input-group textarea:focus {
+    border-color: var(--amr-teal);
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(35, 109, 111, 0.1); /* توهج خفيف بلون الهوية */
+}
+
+/* Textarea Height */
+textarea.amr-input,
+.amr-input-group textarea {
+    min-height: 140px;
+    resize: none;
+}
+
+/* --- Select Arrow Customization --- */
+select.amr-input,
+.amr-input-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%231FA7A2' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-position: left 1rem center;
+    background-repeat: no-repeat;
+    background-size: 16px 12px;
+    padding-left: 3rem;
+}
+
+/* --- File Upload Box --- */
+.amr-file-upload {
+    border: 2px dashed #cbd5e1;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    position: relative;
+    transition: 0.3s;
+    background: #f8fafc;
+    color: var(--amr-muted);
+    cursor: pointer;
+}
+
+.amr-file-upload:hover {
+    border-color: var(--amr-teal);
+    background: #f0fdfa; /* خلفية تركواز فاتحة جداً */
+    color: var(--amr-teal);
+}
+
+.amr-file-upload input[type="file"] {
+    position: absolute; inset: 0; opacity: 0; cursor: pointer;
+}
+
+.amr-file-meta {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    margin-top: 8px;
+}
+
+/* --- Radio Selection Buttons (Individual/Company) --- */
+.btn-outline-selector {
+    border: 1px solid #cbd5e1;
+    color: var(--amr-muted);
+    padding: 15px;
+    border-radius: 15px;
+    background: #ffffff;
+    transition: 0.3s;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 600;
+    display: block;
+    width: 100%;
+}
+
+.btn-check:checked + .btn-outline-selector {
+    background: rgba(35, 109, 111, 0.08);
+    border-color: var(--amr-teal);
+    color: var(--amr-teal);
+    box-shadow: 0 4px 10px rgba(35, 109, 111, 0.1);
+}
+
+/* --- Main Submit Button --- */
+.btn-amr-premium,
+.amr-submit-btn {
+    background: linear-gradient(135deg, #1FA7A2 0%, #167F7B 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    font-weight: 800;
+    transition: 0.3s;
+    padding: 16px 40px;
+    width: 100%;
+    box-shadow: 0 10px 20px rgba(35, 109, 111, 0.15);
+    margin-top: 10px;
+}
+
+.btn-amr-premium:hover,
+.amr-submit-btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(35, 109, 111, 0.25);
+    filter: brightness(1.1);
+}
+
+/* --- Loading Overlay --- */
+.amr-loading {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.85); /* خلفية بيضاء شفافة */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    backdrop-filter: blur(4px);
+    border-radius: 32px;
+}
+
+/* --- Success Message --- */
+.whatsapp-success {
+    text-align: center;
+    background: #ecfdf5;
+    border: 1px solid #10b981;
+    color: #047857;
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 15px;
+    font-weight: 700;
+    animation: pop 0.5s ease;
+}
+
+@keyframes pop {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* --- Utility --- */
+.ltr-text { direction: ltr; text-align: left; }
+.amr-error-msg { color: var(--amr-error); font-size: 0.85rem; margin-top: 5px; font-weight: 600; }
+.amr-terms { margin-top: 15px; color: var(--amr-text); font-size: 0.9rem; display: flex; gap: 8px; align-items: center; }
+.amr-terms a { color: var(--amr-teal); text-decoration: underline; font-weight: 700; }

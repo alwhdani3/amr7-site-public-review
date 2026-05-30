@@ -1,0 +1,94 @@
+@layer components {
+    /* ملف تنسيق مبدل الشركات (Company Switcher) */
+
+    .company-switcher {
+        /* لا حاجة لمتغيرات هنا */
+    }
+
+    /* زر القائمة (Trigger Button) */
+    .company-switcher .btn-light-select {
+        @apply bg-slate-50 border border-slate-200 text-slate-900 rounded-xl px-3 py-1.5 transition-all duration-300 flex items-center gap-2;
+    }
+
+    .company-switcher .btn-light-select:hover,
+    .company-switcher .btn-light-select[aria-expanded="true"] {
+        @apply bg-white border-[#1FA7A2] shadow-sm;
+        box-shadow: 0 2px 5px rgba(35, 109, 111, 0.1);
+    }
+
+    /* القائمة المنسدلة (Dropdown Menu) */
+    .company-switcher .dropdown-menu-light {
+        /* تم التصحيح: إضافة علامة التعجب قبل الكلاسات بدلاً من نهاية السطر */
+        @apply !bg-white !border !border-slate-200 !shadow-xl !rounded-xl !overflow-hidden !mt-2;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    /* الأفاتار الصغير (Active Avatar) */
+    .company-switcher .company-avatar-sm {
+        @apply w-8 h-8 rounded-lg text-white flex items-center justify-center font-bold text-sm shadow-sm;
+        background: linear-gradient(135deg, #1FA7A2, #1a4c4e);
+    }
+
+    /* الأفاتار في القائمة (List Item Avatar) */
+    .company-switcher .company-avatar-xs {
+        @apply w-7 h-7 rounded-md bg-slate-100 text-slate-500 flex items-center justify-center text-xs font-bold transition-colors duration-200;
+    }
+
+    .company-switcher .company-avatar-xs.bg-teal {
+        @apply bg-[#1FA7A2] text-white;
+    }
+
+    /* قائمة التمرير (Scroll List) */
+    .company-switcher .companies-list-scroll {
+        @apply max-h-[250px] overflow-y-auto;
+    }
+
+    /* عنصر القائمة (List Item) */
+    .company-switcher .dropdown-item {
+        @apply text-slate-700 transition-colors duration-200 px-4 py-2 flex items-center justify-between w-full;
+    }
+
+    .company-switcher .dropdown-item:hover {
+        @apply bg-[#f0fdfa] text-[#1FA7A2]; /* Teal-50 */
+    }
+
+    /* الشركة النشطة (Active Company) */
+    .company-switcher .active-company {
+        /* تم التصحيح */
+        @apply !bg-[#1FA7A2]/10 !border-r-4 !border-[#1FA7A2];
+    }
+
+    /* نصوص مساعدة (Utilities) */
+    .company-switcher .text-dark-blue {
+        @apply !text-slate-900;
+    }
+
+    .company-switcher .text-muted-custom {
+        @apply !text-slate-500;
+    }
+
+    .company-switcher .text-teal {
+        @apply !text-[#1FA7A2];
+    }
+
+    .company-switcher .border-light {
+        @apply !border-slate-200;
+    }
+
+    .company-switcher .hover-bg-light:hover {
+        @apply !bg-slate-50;
+    }
+
+    .company-switcher .x-small {
+        @apply text-xs;
+    }
+
+    /* تخصيص السكرول بار */
+    .company-switcher .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .company-switcher .custom-scrollbar::-webkit-scrollbar-thumb {
+        @apply bg-slate-300 rounded-full;
+    }
+}

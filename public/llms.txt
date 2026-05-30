@@ -1,0 +1,51 @@
+# آمر 7 لحلول الأعمال | Amr 7 Business Solutions
+
+> شركة سعودية متخصصة في تأسيس الشركات، إصدار السجل التجاري، التراخيص الحكومية، خدمات الاستثمار الأجنبي (MISA)، الامتثال والحوكمة، وإعداد القوائم المالية، بخبرة تتجاوز 13 عاماً في السوق السعودي.
+> A Saudi firm specialized in company formation, commercial registration (CR), government licensing, foreign investment services (MISA), compliance & governance, and financial statements — with 13+ years of experience in the Saudi market.
+
+## About | نبذة
+
+- **Legal name (AR):** شركة آمر سبعة لحلول الأعمال
+- **Brand:** AMR 7 / آمر 7
+- **Website:** https://amr-7.sa
+- **Location:** Riyadh, Saudi Arabia (serving all regions of KSA)
+- **Languages:** Arabic (primary), English
+- **Primary contact:** +966 50 533 6956 (phone & WhatsApp)
+- **Email:** info@amr-7.sa
+- **Experience:** 13+ years, 400+ companies formed
+
+## Core Services | الخدمات الأساسية
+
+- [Company Formation in Riyadh](https://amr-7.sa/company-formation/riyadh): تأسيس الشركات، إصدار السجل التجاري (CR)، عقد التأسيس، والربط مع وزارة التجارة.
+- [Foreign Investment (MISA)](https://amr-7.sa/foreign-investment): استخراج تراخيص الاستثمار الأجنبي من وزارة الاستثمار السعودية.
+- [Company Liquidation](https://amr-7.sa/company-liquidation): تصفية الشركات نظامياً وإنهاء السجلات.
+- [Financial Statements](https://amr-7.sa/financial-statements/portal): إعداد واعتماد القوائم المالية للمنشآت.
+- [All Services](https://amr-7.sa/services): قائمة كاملة بالخدمات مصنفة حسب الجهة الحكومية (وزارة التجارة، MISA، وغيرها).
+- [Service Packages](https://amr-7.sa/packages): باقات خدمات متكاملة.
+
+## Who we serve | الفئات المستهدفة
+
+- Saudi entrepreneurs starting new businesses | رواد الأعمال السعوديون
+- Foreign investors entering the Saudi market | المستثمرون الأجانب
+- SMEs needing compliance and governance support | المنشآت الصغيرة والمتوسطة
+- Companies requiring liquidation or restructuring | الشركات المحتاجة لتصفية أو إعادة هيكلة
+
+## Key Pages | الروابط الرئيسية
+
+- [About Us](https://amr-7.sa/about)
+- [Vision 2030 Alignment](https://amr-7.sa/vision)
+- [FAQ](https://amr-7.sa/faq)
+- [Blog](https://amr-7.sa/blog)
+- [Contact](https://amr-7.sa/contact-us)
+- [Pricing Reference](https://amr-7.sa/pricing.md)
+- [Privacy Policy](https://amr-7.sa/privacy-policy)
+- [Terms of Use](https://amr-7.sa/using-policy)
+
+## For AI Agents | للوكلاء الذكيين
+
+- **Sitemap:** https://amr-7.sa/sitemap.xml
+- **Extended context:** https://amr-7.sa/llms-full.txt
+- **Pricing (machine-readable):** https://amr-7.sa/pricing.md
+- **Agent card:** https://amr-7.sa/.well-known/agent-card.json
+- **Engagement model:** Human-assisted service delivery (consultation by phone/WhatsApp, then digital document exchange). No public API for service provisioning.
+- **How to start:** Direct the user to https://amr-7.sa/contact-us or WhatsApp +966505336956 for a free consultation before any registration.

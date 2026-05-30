@@ -1,0 +1,144 @@
+/* =====================================
+   FILAMENT LIGHT THEME - FINAL (AMR 7)
+   File: public/css/app/amr7-theme.css
+===================================== */
+
+:root {
+    --amr-bg: #f8fafc;           /* خلفية الصفحة */
+    --amr-surface: #ffffff;      /* خلفية العناصر */
+    --amr-border: #e2e8f0;       /* لون الحدود */
+    --amr-text: #0f172a;         /* نص أساسي داكن */
+    --amr-muted: #64748b;        /* نص ثانوي رمادي */
+    --amr-teal: #1FA7A2;         /* لون الهوية */
+}
+
+/* 1. Global Layout (Dashboard + Login Page) */
+html,
+body,
+.fi-layout,
+.fi-main-ctn,
+.fi-simple-layout,    /* تغطية صفحة تسجيل الدخول */
+.fi-simple-main-ctn {
+    background-color: var(--amr-bg) !important;
+    color: var(--amr-text) !important;
+    font-family: 'Tajawal', sans-serif !important;
+}
+
+/* 2. Topbar (الشريط العلوي) */
+.fi-topbar,
+.fi-topbar nav {
+    background-color: var(--amr-surface) !important;
+    border-bottom: 1px solid var(--amr-border) !important;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02) !important;
+}
+
+/* 3. Sidebar (القائمة الجانبية) */
+.fi-sidebar,
+.fi-main-sidebar {
+    background-color: var(--amr-surface) !important;
+    border-left: 1px solid var(--amr-border) !important;
+}
+
+.fi-sidebar-header {
+    background-color: var(--amr-surface) !important;
+    border-bottom: 1px solid var(--amr-border) !important;
+}
+
+/* العنصر النشط في القائمة */
+.fi-sidebar-item-active,
+.fi-sidebar-item.fi-active > a {
+    background-color: rgba(35, 109, 111, 0.1) !important; /* خلفية تركواز فاتحة */
+    border-right: 4px solid var(--amr-teal) !important;
+    color: var(--amr-teal) !important;
+    font-weight: 700 !important;
+}
+
+.fi-sidebar-item-label {
+    color: var(--amr-text) !important;
+    font-weight: 600;
+}
+
+.fi-sidebar-item-button:hover {
+    background-color: #f1f5f9 !important;
+}
+
+/* 4. Cards & Forms (إصلاح الخلفيات السوداء) */
+.fi-section,
+.fi-card,
+.fi-fo-field-wrp,
+.fi-wi-widget,
+.fi-simple-layout .fi-card { /* كارت تسجيل الدخول */
+    background-color: var(--amr-surface) !important;
+    border: 1px solid var(--amr-border) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* 5. Inputs (حقول الإدخال) */
+.fi-input,
+.fi-select-input,
+.fi-textarea,
+.fi-input-wrp {
+    background-color: #ffffff !important;
+    color: var(--amr-text) !important;
+    border: 1px solid #cbd5e1 !important; /* حدود رمادية واضحة */
+    border-radius: 10px !important;
+}
+
+.fi-input::placeholder,
+.fi-textarea::placeholder {
+    color: #94a3b8 !important;
+}
+
+.fi-input:focus,
+.fi-select-input:focus,
+.fi-textarea:focus,
+.fi-input-wrp:focus-within {
+    border-color: var(--amr-teal) !important;
+    box-shadow: 0 0 0 4px rgba(68,189,184, 0.2) !important;
+}
+
+/* 6. Buttons (الأزرار) */
+.fi-btn-primary {
+    background: linear-gradient(135deg, var(--amr-teal) 0%, #167F7B 100%) !important;
+    color: #ffffff !important; /* نص أبيض */
+    border: none !important;
+    border-radius: 10px;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(35, 109, 111, 0.2);
+}
+
+.fi-btn-primary:hover {
+    filter: brightness(1.1) !important;
+    transform: translateY(-1px);
+}
+
+/* 7. Tables (الجداول) */
+.fi-ta-table {
+    background-color: transparent !important;
+}
+
+.fi-ta-header-cell {
+    background-color: #f8fafc !important;
+    color: var(--amr-muted) !important;
+    font-weight: 700 !important;
+}
+
+.fi-ta-row {
+    border-bottom: 1px solid var(--amr-border) !important;
+    background-color: #ffffff !important;
+}
+
+.fi-ta-row:hover {
+    background: rgba(35, 109, 111, 0.04) !important; /* تأثير مرور الماوس */
+}
+
+/* 8. Modals (النوافذ المنبثقة) */
+.fi-modal-window {
+    background-color: #ffffff !important;
+    border: 1px solid var(--amr-border) !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
+    color: var(--amr-text) !important;
+}
+.fi-modal-heading { color: var(--amr-text) !important; }
+.fi-modal-description { color: var(--amr-muted) !important; }

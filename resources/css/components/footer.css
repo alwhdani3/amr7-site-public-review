@@ -1,0 +1,190 @@
+@layer components {
+    /* ملف تنسيق الفوتر (Footer) */
+
+    .footer-lux {
+        /* متغيرات محلية */
+        --amr-teal: #1FA7A2;
+        
+        @apply bg-slate-50 border-t border-slate-200 text-slate-900 relative overflow-hidden font-['Tajawal'];
+    }
+
+    /* الشبكة الاجتماعية (Social Grid) */
+    .social-grid {
+        @apply flex flex-row flex-nowrap gap-2.5 items-center;
+    }
+
+    /* مجموعات الشارات (Badges) */
+    .combined-badges,
+    .payment-group,
+    .trust-group {
+        @apply flex flex-row items-center flex-nowrap;
+    }
+
+    @media (max-width: 500px) {
+        .combined-badges {
+            /* تم التصحيح: علامة التعجب قبل الكلاس */
+            @apply !flex-wrap !justify-center !gap-4;
+        }
+    }
+
+    /* عنوان الفوتر (Title) */
+    .footer-title {
+        @apply font-bold text-lg mb-6 text-[#1FA7A2] relative pb-2.5;
+    }
+
+    .footer-title::after {
+        content: '';
+        @apply absolute bottom-0 w-10 h-[3px] bg-[#1FA7A2] rounded-full;
+        right: 0; /* RTL default */
+    }
+
+    html[dir="ltr"] .footer-title::after {
+        right: auto;
+        left: 0;
+    }
+
+    /* روابط الفوتر (Links) */
+    .footer-link {
+        @apply text-slate-500 no-underline text-sm transition-all duration-300 inline-block;
+    }
+
+    .footer-link:hover {
+        @apply text-[#1FA7A2] transform -translate-x-1.5;
+    }
+
+    html[dir="ltr"] .footer-link:hover {
+        @apply translate-x-1.5;
+    }
+
+    /* صور الفوتر */
+    .footer-img-base {
+        @apply transition-transform duration-300;
+    }
+
+    .footer-img-base:hover {
+        @apply scale-105;
+    }
+
+    /* أيقونات الثقة (Trust Icons) */
+    .trust-icon-sm {
+        @apply h-[30px] w-auto grayscale opacity-70 transition-all duration-300;
+    }
+
+    .trust-icon-link:hover .trust-icon-sm {
+        @apply opacity-100 grayscale-0;
+    }
+
+    /* حقل الاشتراك (Subscribe) */
+    .subscribe-glass-lux {
+        @apply flex bg-white border border-slate-200 p-1 rounded-full transition-all duration-300 shadow-sm;
+    }
+
+    .subscribe-glass-lux:focus-within {
+        @apply border-[#1FA7A2] ring-4 ring-[#1FA7A2]/10;
+    }
+
+    .form-control-glass {
+        @apply bg-transparent border-none text-slate-900 px-4 text-sm outline-none flex-1 h-10;
+    }
+
+    .btn-amr-mini {
+        @apply bg-[#1FA7A2] text-white border-none rounded-full w-10 h-10 flex items-center justify-center transition-all duration-300 cursor-pointer flex-shrink-0;
+    }
+
+    .btn-amr-mini:hover {
+        @apply bg-[#1a5254] -rotate-12;
+    }
+
+    /* أيقونات التواصل الاجتماعي (Social Circles) */
+    .social-circle {
+        @apply w-10 h-10 bg-white border border-slate-300 rounded-full flex items-center justify-center text-slate-500 no-underline transition-all duration-300 text-lg flex-shrink-0;
+    }
+
+    .social-circle:hover {
+        @apply bg-[#1FA7A2] text-white border-[#1FA7A2] -translate-y-1;
+    }
+
+    /* بطاقات التواصل الصغيرة (Contact Cards) */
+    .contact-card-mini {
+        @apply flex items-center gap-3 p-3 bg-white border border-slate-200 rounded-xl no-underline text-slate-900 transition-all duration-300 shadow-sm;
+    }
+
+    .contact-card-mini:hover {
+        @apply shadow-md border-[#1FA7A2]/30;
+    }
+
+    .contact-icon {
+        @apply w-9 h-9 bg-[#1FA7A2]/10 rounded-full flex items-center justify-center text-[#1FA7A2] flex-shrink-0 text-base;
+    }
+
+    /* زر الرقم الموحد */
+    .unified-number-btn {
+        @apply flex items-center justify-center p-2.5 bg-gradient-to-r from-[#1FA7A2]/5 to-transparent border border-slate-200 rounded-xl no-underline;
+    }
+
+    /* نصوص مساعدة (Utilities) */
+    .text-teal {
+        /* تم التصحيح */
+        @apply !text-[#1FA7A2];
+    }
+
+    .ltr-text {
+        @apply inline-block;
+        direction: ltr;
+    }
+
+    .x-small {
+        @apply text-xs;
+    }
+
+    /* زر العودة للأعلى (Back to Top) */
+    .back-to-top {
+        @apply absolute left-8 bottom-8 w-11 h-11 rounded-xl border-none bg-[#1FA7A2] text-white flex items-center justify-center z-10 shadow-lg hover:bg-[#1a5254] transition-colors duration-300 cursor-pointer;
+    }
+
+    html[dir="ltr"] .back-to-top {
+        left: auto;
+        right: 2rem;
+    }
+
+    /* استجابة الشاشات الصغيرة (Mobile) */
+    @media (max-width: 991px) {
+        .footer-top-grid {
+            @apply text-center;
+        }
+
+        .footer-title::after {
+            @apply right-1/2 translate-x-1/2;
+        }
+
+        .subscribe-glass-lux {
+            @apply max-w-[400px] mx-auto;
+        }
+
+        .footer-bottom {
+            /* تم التصحيح */
+            @apply !flex-col-reverse !gap-5;
+        }
+
+        .back-to-top {
+            @apply left-5 bottom-5 w-10 h-10;
+        }
+
+        .social-grid {
+            /* تم التصحيح */
+            @apply !justify-center;
+        }
+
+        .work-hours,
+        .footer-copy {
+            /* تم التصحيح */
+            @apply !text-center;
+        }
+
+        .work-hours div,
+        .footer-copy div {
+            /* تم التصحيح */
+            @apply !justify-center;
+        }
+    }
+}

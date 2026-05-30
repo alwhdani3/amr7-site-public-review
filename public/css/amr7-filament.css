@@ -1,0 +1,290 @@
+/* =====================================
+   FILAMENT AMR7 OVERRIDES (NO FONT IMPORT)
+   Filament v5 ✅
+   - يعتمد على تحميل Tajawal من <head> أو من Filament font()
+===================================== */
+
+/* =====================================
+   0) TOKENS (Brand / UI)
+===================================== */
+:root {
+    --amr-bg: #f8fafc;                   /* slate-50 */
+    --amr-surface: #ffffff;              /* white */
+    --amr-text: #0f172a;                 /* slate-900 */
+    --amr-text-soft: rgba(15,23,42,.75);
+    --amr-muted: rgba(15,23,42,.45);
+
+    --amr-border: rgba(2,6,23,0.10);
+    --amr-border-soft: rgba(2,6,23,0.08);
+
+    --amr-teal: #1FA7A2;
+    --amr-teal-dark: #167F7B;
+    --amr-glow: rgba(68,189,184,0.22);   /* teal-300-ish */
+    --amr-active: rgba(68,189,184,0.18);
+    --amr-hover: rgba(2,6,23,0.04);
+
+    --amr-radius-sm: 10px;
+    --amr-radius-md: 14px;
+
+    --amr-shadow-topbar: 0 6px 18px rgba(2,6,23,.06);
+    --amr-shadow-card: 0 18px 50px rgba(2,6,23,.08);
+}
+
+/* =====================================
+   1) FORCE LIGHT – ROOT & LAYOUT
+===================================== */
+
+html,
+body,
+.fi,
+.fi-body,
+.fi-layout,
+.fi-main,
+.fi-main-ctn {
+    background-color: var(--amr-bg) !important;
+    color: var(--amr-text) !important;
+    font-family: 'Tajawal', ui-sans-serif, system-ui, sans-serif !important;
+}
+
+/* يمنع أي خلفيات داكنة تتسرب من theme */
+.fi * {
+    color-scheme: light !important;
+}
+
+/* =====================================
+   2) TOPBAR
+===================================== */
+
+.fi-topbar,
+.fi-topbar nav {
+    background-color: var(--amr-surface) !important;
+    border-bottom: 1px solid var(--amr-border-soft) !important;
+    box-shadow: var(--amr-shadow-topbar) !important;
+}
+
+/* أحيانًا Filament يحط حاويات داخلية */
+.fi-topbar,
+.fi-topbar * {
+    border-color: var(--amr-border-soft) !important;
+}
+
+/* =====================================
+   3) SIDEBAR
+===================================== */
+
+.fi-sidebar,
+.fi-main-sidebar {
+    background-color: var(--amr-surface) !important;
+    border-left: 1px solid var(--amr-border-soft) !important;
+}
+
+.fi-sidebar-header {
+    background-color: var(--amr-surface) !important;
+    border-bottom: 1px solid var(--amr-border-soft) !important;
+}
+
+/* عناصر القائمة */
+.fi-sidebar-item-button {
+    border-radius: var(--amr-radius-sm);
+}
+
+/* Active item (يغطي أكثر من selector حسب النسخة) */
+.fi-sidebar-item-active,
+.fi-sidebar-item.fi-active > a,
+.fi-sidebar-item.fi-active .fi-sidebar-item-button {
+    background-color: var(--amr-active) !important;
+    border-right: 3px solid var(--amr-teal) !important;
+}
+
+/* Labels */
+.fi-sidebar-item-label {
+    color: var(--amr-text) !important;
+    font-weight: 700;
+}
+
+/* Hover */
+.fi-sidebar-item > a:hover,
+.fi-sidebar-item-button:hover {
+    background-color: var(--amr-hover) !important;
+}
+
+/* =====================================
+   4) CARDS / SECTIONS / FORMS / WIDGETS
+===================================== */
+
+.fi-section,
+.fi-card,
+.fi-fo-field-wrp,
+.fi-wi-widget {
+    background-color: rgba(255,255,255,0.92) !important;
+    border: 1px solid var(--amr-border) !important;
+    border-radius: var(--amr-radius-md) !important;
+    box-shadow: var(--amr-shadow-card) !important;
+}
+
+/* يحسن النص داخل الكروت */
+.fi-section,
+.fi-card,
+.fi-wi-widget {
+    color: var(--amr-text) !important;
+}
+
+/* =====================================
+   5) INPUTS
+===================================== */
+
+/* غطِّ أكثر من class لأن Filament يلف الـ input */
+.fi-input,
+.fi-select-input,
+.fi-textarea,
+.fi-input-wrp,
+.fi-fo-field-wrp .fi-input,
+.fi-fo-field-wrp .fi-select-input,
+.fi-fo-field-wrp .fi-textarea {
+    background-color: var(--amr-surface) !important;
+    color: var(--amr-text) !important;
+    border: 1px solid rgba(2,6,23,0.14) !important;
+    border-radius: var(--amr-radius-sm);
+}
+
+/* Focus ring */
+.fi-input:focus,
+.fi-select-input:focus,
+.fi-textarea:focus,
+.fi-input-wrp:focus-within,
+.fi-fo-field-wrp:focus-within {
+    border-color: rgba(35,109,111,0.55) !important;
+    box-shadow: 0 0 0 6px var(--amr-glow) !important;
+}
+
+/* Placeholder */
+.fi-input::placeholder,
+.fi-textarea::placeholder {
+    color: var(--amr-muted) !important;
+}
+
+/* Disabled */
+.fi-input:disabled,
+.fi-select-input:disabled,
+.fi-textarea:disabled {
+    opacity: .75 !important;
+    cursor: not-allowed !important;
+    background-color: rgba(255,255,255,0.85) !important;
+}
+
+/* =====================================
+   6) BUTTONS
+===================================== */
+
+/* Primary */
+.fi-btn-primary,
+.fi-btn.fi-color-primary {
+    background: linear-gradient(135deg, var(--amr-teal) 0%, #44BDB8 100%) !important;
+    color: #06202a !important;
+    border: none !important;
+    border-radius: var(--amr-radius-sm);
+    font-weight: 800 !important;
+}
+
+/* Hover */
+.fi-btn-primary:hover,
+.fi-btn.fi-color-primary:hover {
+    filter: brightness(0.98);
+    transform: translateY(-1px);
+}
+
+/* عام */
+.fi-btn {
+    border-radius: var(--amr-radius-sm);
+}
+
+/* Secondary/outline */
+.fi-btn-secondary,
+.fi-btn-outline,
+.fi-btn-gray,
+.fi-btn.fi-color-gray {
+    background-color: var(--amr-surface) !important;
+    color: var(--amr-text) !important;
+    border: 1px solid rgba(2,6,23,0.14) !important;
+}
+
+.fi-btn-secondary:hover,
+.fi-btn-outline:hover,
+.fi-btn-gray:hover,
+.fi-btn.fi-color-gray:hover {
+    background-color: rgba(2,6,23,0.03) !important;
+}
+
+/* Disabled buttons */
+.fi-btn:disabled,
+.fi-btn[disabled] {
+    opacity: .75 !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+}
+
+/* =====================================
+   7) TABLES
+===================================== */
+
+.fi-ta-table {
+    background-color: transparent !important;
+}
+
+.fi-ta-row {
+    border-bottom: 1px solid var(--amr-border-soft) !important;
+}
+
+/* Hover row */
+.fi-ta-row:hover {
+    background-color: rgba(68,189,184,0.10) !important;
+}
+
+/* Table header */
+.fi-ta-header,
+.fi-ta-header-cell,
+.fi-ta-table thead {
+    background-color: rgba(255,255,255,0.92) !important;
+    color: var(--amr-text-soft) !important;
+}
+
+/* نصوص أعمدة الجدول */
+.fi-ta-header-cell *,
+.fi-ta-row * {
+    color: inherit !important;
+}
+
+/* =====================================
+   8) LINKS / BADGES
+===================================== */
+
+a,
+.fi-link {
+    color: var(--amr-teal) !important;
+}
+
+a:hover,
+.fi-link:hover {
+    color: var(--amr-teal-dark) !important;
+}
+
+.fi-badge {
+    border: 1px solid var(--amr-border) !important;
+    background: rgba(255,255,255,0.70) !important;
+    color: var(--amr-text) !important;
+}
+
+/* =====================================
+   9) SMALL FIXES
+===================================== */
+
+/* أحيانًا يظهر padding/rounded غير متناسق */
+.fi-card,
+.fi-section {
+    overflow: hidden;
+}
+
+/* إزالة أي “تعتيم” يجي من theme */
+.fi * {
+    text-shadow: none !important;
+}

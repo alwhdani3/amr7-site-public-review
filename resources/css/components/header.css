@@ -1,0 +1,139 @@
+@layer components {
+    /* ملف تنسيق الهيدر (Header & Topbar) */
+
+    /* 1. أدوات مساعدة (Utilities) */
+    .x-small { 
+        @apply text-xs; 
+    }
+    .text-teal { 
+        @apply !text-[#1FA7A2]; 
+    }
+    .text-muted { 
+        @apply !text-slate-500; 
+    }
+    .border-light-custom { 
+        @apply !border-slate-200; 
+    }
+    .hover-teal:hover { 
+        @apply !text-[#1FA7A2]; 
+    }
+
+    /* 2. الشريط العلوي (Top Bar) */
+    .top-bar-amr {
+        @apply bg-slate-50 border-b border-slate-200 z-[1030] relative;
+    }
+
+    .top-link-item {
+        @apply text-slate-500 text-sm no-underline transition-all duration-300 whitespace-nowrap flex items-center;
+    }
+
+    .top-link-item:hover { 
+        @apply !text-[#1FA7A2]; 
+    }
+
+    /* 3. زر واتساب (Pill Style) */
+    .whatsapp-pill-creative {
+        @apply bg-emerald-50 border border-emerald-500 text-emerald-700 px-4 py-1 rounded-full no-underline transition-all duration-300 flex items-center gap-1.5 text-xs font-bold;
+    }
+
+    .whatsapp-pill-creative:hover { 
+        @apply !bg-emerald-500 !text-white -translate-y-0.5 shadow-sm; 
+    }
+
+    /* 4. أيقونات التواصل (Social Icons) */
+    .social-box {
+        @apply w-[30px] h-[30px] bg-white border border-slate-300 text-slate-500 flex items-center justify-center rounded-md transition-all duration-300 text-sm no-underline;
+    }
+
+    .social-box:hover { 
+        @apply bg-[#1FA7A2] text-white border-[#1FA7A2] -translate-y-0.5; 
+    }
+
+    .is-disabled { 
+        @apply opacity-50 cursor-not-allowed pointer-events-none; 
+    }
+
+    /* 5. القائمة الرئيسية (Navbar) */
+    .navbar-amr-master {
+        @apply bg-white border-b border-slate-100;
+    }
+
+    .amr-nav-link {
+        @apply text-slate-800 font-bold px-4 py-2.5 relative text-sm transition-all duration-200 block;
+    }
+
+    .amr-nav-link:hover, 
+    .amr-nav-link.active {
+        @apply !text-[#1FA7A2] bg-[#1FA7A2]/5 rounded-lg;
+    }
+
+    .logo-base { 
+        @apply transition-transform duration-300; 
+    }
+    .logo-base:hover { 
+        @apply scale-105; 
+    }
+
+    /* 6. القوائم المنسدلة (Dropdowns) */
+    .dropdown-menu-amr {
+        @apply bg-white border border-slate-200 rounded-xl shadow-xl z-[2000] p-3 min-w-[200px];
+    }
+
+    /* عناصر القائمة المنسدلة */
+    .dropdown-item {
+        @apply block w-full text-right px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-[#1FA7A2] rounded-lg transition-colors duration-200;
+    }
+
+    .mega-card-sm, 
+    .service-item-slim { 
+        @apply transition-colors duration-200; 
+    }
+
+    .mega-card-sm:hover, 
+    .service-item-slim:hover { 
+        @apply !bg-slate-50; 
+    }
+
+    .mega-card-sm:hover span, 
+    .service-item-slim:hover span { 
+        @apply !text-[#1FA7A2]; 
+    }
+
+    /* أيقونات القوائم */
+    .icon-mini-square {
+        @apply w-7 h-7 bg-[#1FA7A2]/10 text-[#1FA7A2] rounded flex items-center justify-center text-xs shadow-sm;
+    }
+
+    .dot-indicator {
+        @apply w-1.5 h-1.5 bg-[#1FA7A2] rounded-full inline-block;
+    }
+
+    /* 7. الأزرار (Buttons) */
+    .btn-amr-premium-glow {
+        @apply bg-gradient-to-br from-[#1FA7A2] to-[#167F7B] text-white border-none shadow-md transition-all duration-300;
+    }
+
+    .btn-amr-premium-glow:hover {
+        @apply -translate-y-0.5 text-white !shadow-lg shadow-[#1FA7A2]/30;
+    }
+
+    .btn-outline-amr {
+        @apply bg-transparent border-2 border-[#1FA7A2] text-[#1FA7A2] transition-all duration-300;
+    }
+
+    .btn-outline-amr:hover {
+        @apply !bg-[#1FA7A2] !text-white;
+    }
+
+    /* استجابة الشاشات (Mobile) */
+    @media (max-width: 991.98px) {
+        .navbar .btn { 
+            @apply !w-full mb-2 !py-2; 
+        }
+
+        .navbar .d-flex.align-items-center {
+            /* تم التحويل من CSS عادي إلى Tailwind */
+            @apply !flex-wrap !gap-2.5; 
+        }
+    }
+}

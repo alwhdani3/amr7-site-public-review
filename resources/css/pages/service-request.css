@@ -1,0 +1,215 @@
+@layer components {
+    /* ملف تنسيق صفحة طلب الخدمة (Service Request Page) */
+
+    /* 1. إعدادات الصفحة العامة */
+    body, .luxury-request-ui-light {
+        @apply bg-slate-50 text-slate-900 font-['Tajawal'] min-h-screen rtl:text-right m-0;
+    }
+
+    /* خلفية مموجة (Overlay) */
+    .hero-bg-overlay-light {
+        @apply absolute top-0 left-0 w-full h-[600px] pointer-events-none z-0 opacity-60;
+        background: radial-gradient(circle at 50% -20%, rgba(35, 109, 111, 0.08) 0%, transparent 80%);
+    }
+
+    /* 2. بطاقة النموذج الرئيسية (Main Card) */
+    .amr-form-card {
+        @apply relative z-10 rounded-[32px] border border-slate-200/60 p-10 shadow-2xl backdrop-blur-md;
+        background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    }
+
+    /* 3. شريط تتبع الخطوات (Progress Tracker) */
+    .amr-pro-tracker-light {
+        @apply flex items-center justify-between relative mb-10 px-2;
+    }
+
+    /* الخط الواصل */
+    .step-connector {
+        @apply flex-grow h-0.5 bg-slate-200 -mt-6 transition-all duration-500 ease-in-out;
+    }
+
+    .step-box {
+        @apply relative z-10 text-center;
+    }
+
+    /* دائرة الرقم */
+    .step-num {
+        @apply w-14 h-14 bg-white border-2 border-slate-200 rounded-full flex items-center justify-center text-slate-400 font-bold text-lg transition-all duration-300 shadow-sm;
+    }
+
+    /* الخطوة النشطة */
+    .step-box.active .step-num {
+        @apply bg-[#1FA7A2] border-[#1FA7A2] text-white scale-110 shadow-lg shadow-[#1FA7A2]/20;
+    }
+
+    /* نصوص الخطوات */
+    .step-box span {
+        @apply block mt-3 text-[11px] font-extrabold text-slate-400 uppercase tracking-wide;
+    }
+
+    .step-box.active span {
+        @apply text-[#1FA7A2];
+    }
+
+    /* 4. العناوين والحقول (Inputs & Labels) */
+    .form-step-title {
+        @apply text-[#1FA7A2] font-extrabold text-lg border-b-2 border-[#1FA7A2]/10 pb-3 mb-6;
+    }
+
+    .lux-label-light, 
+    .amr-input-group label {
+        @apply text-slate-800 font-bold text-sm mb-2 block;
+    }
+
+    .amr-input-group label i {
+        @apply text-[#1FA7A2] ml-1.5;
+    }
+
+    /* توحيد جميع الحقول */
+    .amr-input-group input,
+    .amr-input-group select,
+    .amr-input-group textarea,
+    .amr-input,
+    .lux-field-light {
+        @apply w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-slate-900 outline-none transition-all duration-200 text-sm shadow-sm;
+    }
+
+    /* حقل للقراءة فقط */
+    .input-static-light {
+        @apply bg-slate-100 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-500 font-bold cursor-not-allowed;
+    }
+
+    .amr-input-group input::placeholder,
+    .amr-input-group textarea::placeholder {
+        @apply text-slate-400;
+    }
+
+    /* التركيز (Focus State) */
+    .amr-input-group input:focus,
+    .amr-input-group select:focus,
+    .amr-input-group textarea:focus,
+    .lux-field-light:focus {
+        @apply bg-white border-[#1FA7A2] ring-4 ring-[#1FA7A2]/10;
+    }
+
+    /* تخصيص السهم للقائمة المنسدلة (RTL Compatible) */
+    .amr-input-group select {
+        @apply appearance-none bg-no-repeat pl-10;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%231FA7A2' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+        background-position: left 1rem center; 
+        background-size: 16px 12px;
+    }
+
+    /* 5. بطاقات الاختيار (Selection Cards/Radios) */
+    .btn-outline-selector {
+        @apply border border-slate-200 text-slate-500 p-4 rounded-2xl bg-white transition-all duration-300 cursor-pointer text-center font-bold block hover:bg-slate-50;
+    }
+
+    .btn-check:checked + .btn-outline-selector {
+        @apply bg-[#1FA7A2]/5 border-[#1FA7A2] text-[#1FA7A2] shadow-md;
+    }
+
+    /* بطاقة اختيار الكيان (مع أيقونة) */
+    .lux-est-card-light {
+        @apply bg-white border border-slate-200 rounded-3xl p-6 transition-all duration-300 relative cursor-pointer hover:-translate-y-1 hover:shadow-md;
+    }
+
+    .company-radio:checked + .lux-est-card-light {
+        @apply border-[#1FA7A2] bg-[#f0fdfa] shadow-lg transform -translate-y-1;
+    }
+
+    .est-icon-light {
+        @apply w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center text-2xl text-slate-600 mb-4 transition-colors;
+    }
+
+    .company-radio:checked + .lux-est-card-light .est-icon-light {
+        @apply bg-[#1FA7A2]/10 text-[#1FA7A2];
+    }
+
+    /* علامة الصح */
+    .check-mark-light {
+        @apply absolute top-4 left-4 w-6 h-6 bg-[#1FA7A2] rounded-full text-white flex items-center justify-center text-xs opacity-0 scale-50 transition-all duration-300;
+    }
+
+    .company-radio:checked + .lux-est-card-light .check-mark-light {
+        @apply opacity-100 scale-100;
+    }
+
+    /* 6. رفع الملفات (File Upload) */
+    .amr-file-upload {
+        @apply border-2 border-dashed border-slate-300 rounded-2xl p-8 text-center relative transition-all duration-300 bg-slate-50 text-slate-500 cursor-pointer;
+    }
+
+    .amr-file-upload:hover {
+        @apply border-[#1FA7A2] bg-[#f0fdfa] text-[#1FA7A2];
+    }
+
+    .amr-file-meta {
+        @apply text-slate-400 text-xs mt-2 font-medium;
+    }
+
+    .upload-glow-circle-light {
+        @apply w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3 bg-white shadow-sm text-slate-400;
+    }
+
+    .amr-file-upload:hover .upload-glow-circle-light {
+        @apply text-[#1FA7A2] shadow-md;
+    }
+
+    /* 7. الأزرار (Buttons) */
+    .amr-submit-btn,
+    .btn-amr-lg {
+        @apply w-full bg-gradient-to-br from-[#1FA7A2] to-[#167F7B] text-white border-none rounded-full font-extrabold py-4 px-10 text-lg shadow-xl transition-all duration-300 mt-4 cursor-pointer flex items-center justify-center gap-2;
+    }
+
+    .amr-submit-btn:hover:not(:disabled),
+    .btn-amr-lg:hover {
+        @apply -translate-y-1 shadow-2xl shadow-[#1FA7A2]/30 brightness-110;
+    }
+
+    .btn-lux-secondary-light {
+        @apply bg-white border border-slate-200 text-slate-500 font-bold rounded-full py-4 px-8 transition-all duration-300 hover:bg-slate-50 hover:text-slate-800;
+    }
+
+    .btn-lux-add-company-light {
+        @apply bg-[#f0fdfa] border border-dashed border-[#1FA7A2] text-[#1FA7A2] px-5 py-2.5 rounded-full font-bold text-sm transition-all duration-300 hover:bg-[#1FA7A2] hover:text-white hover:border-solid cursor-pointer;
+    }
+
+    /* 8. رسائل وتنبيهات (Alerts & Utils) */
+    .amr-terms {
+        @apply flex gap-2 items-center text-slate-600 text-sm mt-4 font-medium;
+    }
+
+    .amr-terms a {
+        @apply text-[#1FA7A2] underline font-bold hover:text-[#167F7B];
+    }
+
+    .amr-error-msg {
+        @apply text-red-600 text-xs mt-1.5 font-bold animate-pulse;
+    }
+
+    .whatsapp-success {
+        @apply border border-emerald-500 bg-emerald-50 text-emerald-700 p-4 rounded-2xl text-center mt-6 font-bold shadow-sm;
+    }
+
+    /* شاشة التحميل */
+    .amr-loading {
+        @apply absolute inset-0 bg-white/80 flex items-center justify-center z-20 backdrop-blur-sm rounded-[32px];
+    }
+
+    /* نصوص إنجليزية */
+    .ltr-text { 
+        @apply text-left; 
+        direction: ltr; 
+    }
+
+    .text-teal { 
+        /* تم التصحيح */
+        @apply !text-[#1FA7A2]; 
+    }
+    
+    .bg-light { 
+        /* تم التصحيح */
+        @apply !bg-slate-50; 
+    }
+}

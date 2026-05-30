@@ -1,0 +1,100 @@
+# robots.txt for amr-7.sa
+# Last updated: 2026-05-22
+
+User-agent: *
+Allow: /
+
+# ============================================
+# الصفحات الخاصة والداخلية
+# ============================================
+Disallow: /login
+Disallow: /register
+Disallow: /forgot-password
+Disallow: /reset-password
+Disallow: /email/verify
+Disallow: /confirm-password
+Disallow: /two-factor-challenge
+Disallow: /user/
+Disallow: /settings/
+Disallow: /staff
+Disallow: /dashboard
+Disallow: /dashboard/
+Disallow: /company/
+Disallow: /companies/
+Disallow: /files/
+Disallow: /fs/
+Disallow: /financial-statements/dashboard
+Disallow: /storage/
+# Phase F: حظر لوحة الإدارة (Filament panel /amr7) + admin
+Disallow: /amr7
+Disallow: /amr7/
+Disallow: /admin
+Disallow: /admin/
+# السماح فقط بصور المحتوى العامة داخل /storage (شعارات، أيقونات الخدمات، صور المقالات)
+# يمنع فهرسة الملفات الحساسة مثل PDF و CSV و ZIP داخل storage.
+Allow: /storage/*.png
+Allow: /storage/*.jpg
+Allow: /storage/*.jpeg
+Allow: /storage/*.webp
+Allow: /storage/*.svg
+Allow: /storage/*.gif
+Allow: /storage/*.avif
+
+# ============================================
+# نسخة EN من نفس الصفحات
+# ============================================
+Disallow: /en/login
+Disallow: /en/register
+Disallow: /en/forgot-password
+Disallow: /en/reset-password
+Disallow: /en/dashboard
+Disallow: /en/dashboard/
+Disallow: /en/settings/
+Disallow: /en/staff
+
+# ============================================
+# لوحة Filament Admin
+# ============================================
+Disallow: /amr7
+Disallow: /amr7/
+
+# ============================================
+# Query/filter/request/legacy URLs are handled by noindex, 301, or 410 in Laravel.
+# Do not disallow them here so Google can see the correct cleanup signal.
+# ============================================
+
+# ============================================
+# السماح الصريح للأصول
+# ============================================
+Allow: /build/
+Allow: /images/
+Allow: /img/
+Allow: /favicon.ico
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.woff2$
+Allow: /*.svg$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+
+# ============================================
+# Sitemap
+# ============================================
+Sitemap: https://amr-7.sa/sitemap.xml
+
+# ============================================
+# Bad bots
+# ============================================
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

@@ -1,0 +1,179 @@
+@layer components {
+    /* ملف تنسيق الصفحة الرئيسية (Home Page) */
+
+    /* --- Global Overrides --- */
+    body {
+        /* تم التصحيح */
+        @apply !bg-slate-50 !text-slate-900;
+    }
+
+    .bg-amr { 
+        @apply bg-slate-50; 
+    }
+
+    /* خلفيات متدرجة (Gradients) */
+    .bg-journey { 
+        @apply bg-gradient-to-b from-slate-50 to-white; 
+    }
+    .bg-contact { 
+        @apply bg-gradient-to-t from-slate-100 to-white; 
+    }
+
+    /* تدرج النصوص */
+    .text-teal-gradient {
+        @apply bg-clip-text text-transparent bg-gradient-to-br from-[#1FA7A2] to-[#167F7B];
+    }
+    .text-teal-light { 
+        @apply text-[#1FA7A2]; 
+    }
+
+    .etmaam-divider { 
+        @apply w-[60px] h-1 bg-[#1FA7A2] rounded-full; 
+    }
+
+    /* --- Hero Section --- */
+    .hero-lux { 
+        @apply min-h-screen bg-white relative overflow-hidden; 
+    }
+
+    .hero-overlay { 
+        @apply absolute inset-0 bg-white/90 z-10; 
+    }
+
+    .hero-display {
+        @apply text-4xl md:text-5xl lg:text-7xl font-extrabold leading-tight text-slate-900;
+    }
+
+    .hero-subtitle {
+        @apply block text-lg md:text-xl lg:text-2xl leading-relaxed mt-3 text-slate-500 font-normal;
+    }
+
+    .hero-description {
+        @apply text-lg md:text-xl leading-loose text-slate-500 border-r-4 border-[#1FA7A2] pr-6;
+    }
+
+    /* --- Buttons & Badges --- */
+    .etmaam-badge {
+        @apply inline-flex items-center gap-2.5 px-6 py-3 bg-[#1FA7A2]/5 border border-[#1FA7A2]/20 text-[#1FA7A2] rounded-full font-bold text-sm;
+    }
+
+    .btn-etmaam-primary {
+        @apply inline-flex items-center gap-2.5 px-10 py-4 bg-gradient-to-r from-[#1FA7A2] to-[#167F7B] text-white font-extrabold rounded-full shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all duration-300 no-underline border-none;
+    }
+
+    .btn-etmaam-outline {
+        @apply inline-flex items-center gap-2.5 px-10 py-4 bg-white border-2 border-[#1FA7A2] text-[#1FA7A2] font-bold rounded-full transition-all duration-300 no-underline hover:bg-[#1FA7A2] hover:text-white;
+    }
+
+    /* --- Stats Cards --- */
+    .glass-stat-card {
+        @apply bg-white border border-slate-100 p-8 rounded-[25px] shadow-sm text-center transition-all duration-300 hover:-translate-y-2 hover:border-[#1FA7A2]/30 hover:shadow-md;
+    }
+
+    .stat-icon-glow { 
+        @apply text-3xl text-[#1FA7A2] mb-4 block; 
+    }
+    .stat-number { 
+        @apply text-4xl font-black text-slate-900 mb-1 block; 
+    }
+    .stat-label { 
+        @apply text-slate-500 font-bold m-0 block; 
+    }
+
+    /* --- Service Cards --- */
+    .etmaam-service-card {
+        @apply bg-white border border-slate-100 rounded-[35px] p-10 h-full relative overflow-hidden shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[#1FA7A2] hover:shadow-xl;
+    }
+
+    .service-icon {
+        @apply w-[70px] h-[70px] bg-[#1FA7A2]/10 rounded-2xl flex items-center justify-center text-3xl text-[#1FA7A2] mb-6;
+    }
+
+    .service-title { 
+        @apply text-slate-900 font-bold mb-4 text-xl; 
+    }
+    .service-desc { 
+        @apply text-slate-500 leading-relaxed mb-6 block; 
+    }
+    .btn-read-more { 
+        @apply text-[#1FA7A2] no-underline font-bold text-sm inline-flex items-center gap-2 hover:translate-x-1 transition-transform; 
+    }
+
+    /* --- Timeline --- */
+    .timeline { 
+        @apply relative max-w-5xl mx-auto py-10; 
+    }
+    .timeline-axis { 
+        @apply absolute top-0 bottom-0 left-1/2 w-0.5 -translate-x-1/2 bg-slate-200 rounded-full hidden md:block; 
+    }
+
+    .timeline-item { 
+        @apply relative grid md:grid-cols-[1fr_56px_1fr] items-start py-6 gap-y-4 md:gap-y-0; 
+        /* Mobile Fallback */
+        @apply flex flex-col md:grid;
+    }
+
+    .timeline-dot { 
+        @apply hidden md:block col-start-2 justify-self-center w-4 h-4 rounded-full bg-[#1FA7A2] shadow-[0_0_0_4px_#fff,0_0_0_6px_#1FA7A2] mt-5 z-10; 
+    }
+
+    .timeline-card { 
+        @apply w-full p-6 rounded-2xl bg-white border border-slate-100 shadow-sm transition-all duration-300 relative hover:-translate-y-1 hover:border-[#1FA7A2]; 
+    }
+
+    /* Desktop Arrow Logic */
+    @media (min-width: 768px) {
+        .timeline-card::before { 
+            content: ""; 
+            @apply absolute top-6 w-0 h-0 border-[10px] border-transparent; 
+        }
+
+        .timeline-item.right .timeline-card { 
+            @apply col-start-3 justify-self-start text-right rtl:text-right; 
+        }
+        .timeline-item.right .timeline-card::before { 
+            @apply -left-5 border-r-white drop-shadow-sm rtl:left-auto rtl:-right-5 rtl:border-r-transparent rtl:border-l-white; 
+        }
+
+        .timeline-item.left .timeline-card { 
+            @apply col-start-1 justify-self-end text-right rtl:text-right; 
+        }
+        .timeline-item.left .timeline-card::before { 
+            @apply -right-5 border-l-white drop-shadow-sm rtl:right-auto rtl:-left-5 rtl:border-l-transparent rtl:border-r-white; 
+        }
+    }
+
+    .timeline-card h3 { 
+        /* تم التصحيح */
+        @apply !text-slate-900; 
+    }
+    .timeline-card p { 
+        /* تم التصحيح */
+        @apply !text-slate-500; 
+    }
+
+    .step-badge {
+        @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[#1FA7A2] bg-[#1FA7A2]/10 border border-[#1FA7A2]/20 font-bold text-sm;
+    }
+
+    /* --- Contact Form Card --- */
+    .amr-form-card {
+        /* تم التصحيح بالكامل هنا */
+        @apply !bg-white !border !border-slate-200 !rounded-[25px] !p-10 !shadow-2xl;
+    }
+
+    /* --- Utilities --- */
+    .section-kicker {
+        @apply text-[#1FA7A2] font-bold uppercase mb-3 tracking-wider text-sm block;
+    }
+
+    /* تصحيح النصوص البيضاء القديمة */
+    .text-white { 
+        /* تم التصحيح */
+        @apply !text-slate-900; 
+    }
+    .text-white-50 { 
+        /* تم التصحيح */
+        @apply !text-slate-500; 
+    }
+}
